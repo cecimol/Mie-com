@@ -1,0 +1,13 @@
+.navbar{
+background-color: #ccc;
+display: flex;
+flex-direction: row;
+width: 100%;
+align-items: center;
+justify-content: space-around;
+}
+
+.lista{
+    display: flex;
+    text-decoration: none;
+}
