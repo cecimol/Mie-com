@@ -5,7 +5,7 @@ import Campari from '../../img/Campari.png'
 import Branca from '../../img/Branca.jpg'
 import Trumpeter from '../../img/Trumpeter.png'
 import SantaJulia from '../../img/SantaJulia.png'
-
+import { ItemDetailContainer } from '../ItemDetailContainer/itemDetailContainer'
 const PRODUCTOS = [
     {
         id:1,
@@ -71,6 +71,7 @@ export const ItemListContainer = () => {
         <div>
         <ItemList productos={productos}/>
         <ItemsCount stock={stock} initial={1} onAdd={handleAgregar} onSubstract={handleResta}/>
+        <ItemDetailContainer/>
         </div>
         )
 
