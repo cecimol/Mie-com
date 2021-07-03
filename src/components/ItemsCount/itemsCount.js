@@ -1,3 +1,4 @@
+import "./itemsCount.css"
 import {useState} from 'react'
 export const ItemsCount = ({stock, initial, onAdd, onSubstract}) => {
     const [number, setNumber] = useState(initial)
@@ -5,7 +6,7 @@ export const ItemsCount = ({stock, initial, onAdd, onSubstract}) => {
     
       
     return(
-        <div className=''>
+        <div className='barra'>
             <label htmlFor='number'>
                 <p>Agregar productos</p> 
             </label> 
