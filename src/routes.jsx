@@ -22,6 +22,10 @@ export const Routes = ()=> {
             <ItemDetailContainer/>
           </Route>
         </Switch>
+        <Route path="/cart">
+            <div>4</div>
+            <div>Esta es la pagina del carrito</div>
+          </Route>
     </Router>
   );
 }

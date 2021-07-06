@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router'
-import { ItemsCount } from '../ItemsCount/itemsCount'
 import {ItemList} from '../ItemList/itemList'
 import Campari from '../../img/Campari.png'
 import Branca from '../../img/Branca.jpg'
@@ -44,23 +43,11 @@ const PRODUCTOS = [
 
 export const ItemListContainer = () => {
     
-    const [stock, setStock] = useState(5)
+    
     const [productos, setProductos] = useState([])
     const {categoryId} = useParams()
 
-    const handleAgregar = (number, setNumber) => {
-        if (stock > 0){
-            setNumber(number + 1)            
-            setStock(stock-1)
-        }
-    }
     
-    const handleResta = (number, setNumber) => {
-        if (number > 1){
-            setNumber(number-1)
-            setStock(stock+1)
-        }
-    }
     
     useEffect(()=>{        
         const obtenerProductos = new Promise((resolve, reject)=> {     
@@ -84,7 +71,8 @@ export const ItemListContainer = () => {
     return(
         <div>
         <ItemList productos={productos}/>
-        <ItemsCount stock={stock} initial={1} onAdd={handleAgregar} onSubstract={handleResta}/>
+       
+            
         </div>
         )
 
