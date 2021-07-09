@@ -1,12 +1,13 @@
 import "./itemDetail.css"
 import { ItemsCount } from "../ItemsCount/itemsCount"
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
+import { CartContext } from "../../Context/cartContext"
 
-export const ItemDetail = ({title, pictureURL, detalle, price})=>{
+export const ItemDetail = ({id, title, pictureURL, detalle, price})=>{
     const [stock, setStock] = useState(5)
     const [cantidadComprados, setCantidadComprados] = useState(0);
-    
+    const { addItem, isInCart } = useContext(CartContext);
 
     const handleAgregar = (number, setNumber) => {
         if (stock > 0){
@@ -23,7 +24,19 @@ export const ItemDetail = ({title, pictureURL, detalle, price})=>{
     }
 
     const onAdd = (number) => {
-        setCantidadComprados(number);
+        if (!isInCart(id)) {
+            setCantidadComprados(number);
+            addItem(
+                {
+                    id:id,
+                    title:title,
+                    pictureURL:pictureURL,
+                    detalle:detalle,
+                    price:price
+                },
+                number
+            );
+        }        
     }
     const mostrarItemCountOBoton = () => {
         if(cantidadComprados > 0) {

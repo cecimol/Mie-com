@@ -59,6 +59,7 @@ export const ItemDetailContainer = ()=> {
 
     return(
         <ItemDetail 
+            id={item.id}
             title={item.title}
             pictureURL={item.pictureURL}
             detalle={item.detalle}

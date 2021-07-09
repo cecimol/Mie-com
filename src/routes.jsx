@@ -3,9 +3,12 @@ import {BrowserRouter as Router,Switch,Route,} from "react-router-dom";
 import { ItemListContainer } from "./components/ItemListContainer/itemListContainer";
 import { NavBar } from "./components/navBar/navBar";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/itemDetailContainer";
+import { CartProvider } from "./Context/cartContext";
+
 
 export const Routes = ()=> {
   return (
+    <CartProvider>
     <Router>
         <NavBar/>
         <Switch>          
@@ -27,5 +30,6 @@ export const Routes = ()=> {
             <div>Esta es la pagina del carrito</div>
           </Route>
     </Router>
+    </CartProvider>
   );
 }
