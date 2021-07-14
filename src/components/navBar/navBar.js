@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom'
 import {CartWidget} from '../CartWidget/cartWidget'
 import "./navBar.css"
+import { useContext } from 'react'
+import { CartContext } from '../../Context/cartContext'
+
 export const NavBar = () => {
+
+    const {isCartEmpty}=useContext(CartContext)
+    const mostrarCarritoONo = () => {
+        if(!isCartEmpty()){
+            return(<CartWidget/>) 
+        }
+                           
+    }  
+
 
     return(    
     <nav className="navbar">
@@ -22,9 +34,12 @@ export const NavBar = () => {
             <li>
                 <Link to='/category/destilados'>Destilados</Link>
                 </li>
-        </ul>   
-        <CartWidget/>
+        </ul> 
+
+    <div>{mostrarCarritoONo()}</div> 
+        
     </nav>
         
     )
+    
 }

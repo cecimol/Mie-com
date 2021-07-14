@@ -20,16 +20,13 @@ export const CartProvider = ({ children }) =>{
 
     const isInCart = (id) => products.some(producto => producto.item.id === id)
 
-    return(
-        <CartContext.Provider value={{products, addItem, removeItem, clear, isInCart}}>
-            {children}
-    
-        </CartContext.Provider>
-        
-    )
-   
-    
+    const isCartEmpty = () => products.length === 0
 
+    return(
+        <CartContext.Provider value={{products, addItem, removeItem, clear, isInCart, isCartEmpty}}>
+            {children}
+        </CartContext.Provider>
+    )
 }
 
  

@@ -4,7 +4,7 @@ import { ItemListContainer } from "./components/ItemListContainer/itemListContai
 import { NavBar } from "./components/navBar/navBar";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/itemDetailContainer";
 import { CartProvider } from "./Context/cartContext";
-
+import { Cart } from "./components/Cart/cart";
 
 export const Routes = ()=> {
   return (
@@ -27,7 +27,7 @@ export const Routes = ()=> {
         </Switch>
         <Route path="/cart">
             <div>4</div>
-            <div>Esta es la pagina del carrito</div>
+            <Cart/>
           </Route>
     </Router>
     </CartProvider>

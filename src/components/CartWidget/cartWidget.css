@@ -2,3 +2,21 @@
     width: 24px;
     height: 24px;
 }
+
+.CantidadContainer {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    top: 0;
+    right: -5px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.CantidadNumero {
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 1px;
+}
